@@ -1,19 +1,7 @@
 <!--AQUI DEBE IR EL FORMULARIO MEDIANTE EL CUAL SE VA A CREAR Y EDITAR UN PRODUCTO-->
-<div class="text-center">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url('product') }}">INICIO</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-</div>
 
-@section('formulario')
 <div class="card">
     <div class="card-body">
-        <form action="{{ url('/product') }}" method="post">
-            @csrf 
-
             <label for="name">Nombre</label><br>
             <input type="text" name="name" id="name" class="form-control" value=" {{ isset($product->name)?$product->name:'' }} "><hr/>
 
@@ -36,4 +24,3 @@
         </form>
     </div>
 </div>
-@endsection
