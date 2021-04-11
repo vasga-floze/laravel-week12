@@ -6,5 +6,27 @@ LISTADO DE PRODUCTOS <br>
 <a href="{{ url('product/create') }}">Agregar</a>
 @endsection
 
-@include('product.form')
+
+<table class="table">
+    <thead>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Edad recomendada</th>
+        <th>Numero de modelo</th>
+    </thead>
+    <tbody>
+    @foreach( $products as $product)
+        <tr>
+            <td> {{ $product->id}} </td>
+            <td> {{ $product->name}} </td>
+            <td> {{ $product->description}} </td>
+            <td> {{ $product->price}} </td>
+            <td> {{ $product->age}} </td>
+            <td> {{ $product->modelNumber}} </td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
 
