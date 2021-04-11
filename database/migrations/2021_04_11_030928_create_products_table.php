@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->decimal('price');
-            $table->integer('age'); //Edad recomendada por el fabricante
-            $table->string('modelNumber'); //Manufacturer recommended age
+            $table->integer('age'); //Manufacturer recommended age
+            $table->string('modelNumber'); //Product model number
             $table->timestamps();
         });
     }
