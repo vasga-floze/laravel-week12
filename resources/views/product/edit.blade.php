@@ -7,7 +7,7 @@ EDITAR PRODUCTO
 @endsection
 
 
-<form action="{{ url('/product') }}" method="post">
+<form action="{{ url('/product/'. $product->id) }}" method="post">
 
     @csrf
     {{ method_field('PUT') }}

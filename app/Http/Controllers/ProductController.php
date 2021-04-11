@@ -64,7 +64,7 @@ class ProductController extends Controller
     {
         //
         $product=PRODUCT::findOrFail($id);
-        return view('product.edit'); //se enlaza a la vista
+        return view('product.edit', compact('product')); //se pasa la informacion a la view
     }
 
     /**
@@ -77,6 +77,10 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $productData=request()->except(['_token', '_method']);
+        Product::where('id', '=', $id)->update($productData);
+
+        return redirect('product');
     }
 
     /**
@@ -88,5 +92,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+        Product::destroy($id);
+        return redirect('product');
     }
 }
