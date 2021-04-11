@@ -10,7 +10,8 @@ AGREGAR PRODUCTO
 <form action="{{ url('/product') }}" method="post">
 
     @csrf
-    {{ method_field('PUT') }}
+ 
     @include('product.form')
 
 </form>
+

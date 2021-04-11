@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Product;
 class ProductController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        return view('product.index'); //se enlaza a la vista
+        $data['products']=Product::paginate(5);
+        return view('product.index', $data); //se enlaza a la vista
     }
 
     /**
@@ -37,6 +38,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        $productData= request()->except('_token');
+        Product::insert($productData);
+        return response()->json($productData);
     }
 
     /**
