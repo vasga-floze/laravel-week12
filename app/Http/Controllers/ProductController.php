@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $data['products']=Product::paginate(5);
+        $data['products']=Product::paginate(6);
         return view('product.index', $data); //se enlaza a la vista
     }
 
