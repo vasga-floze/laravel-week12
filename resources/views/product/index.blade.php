@@ -18,6 +18,9 @@
                     <li class="nav-item active">
                         <a class="nav-link text-center" href="{{ url('product/create') }}">Agregar producto</span></a>
                     </li>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="{{ url('product/acercade') }}">Acerca de</span></a>
+                    </li>
                 </ul>
             </div>
         </nav>
