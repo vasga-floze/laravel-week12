@@ -18,5 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('product/acercade', [ProductController::class, 'acercade']);
 //Va a mostrar todas las rutas
 Route::resource('product', ProductController::class);

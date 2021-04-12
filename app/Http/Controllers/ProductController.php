@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 class ProductController extends Controller
 {
+    public function acercade()
+    {
+        //
+        return view('product.acercade'); //se enlaza a la vista
+    }
     /**
      * Display a listing of the resource.
      *
